@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  activemq:
+    image: symptoma/activemq:latest
+    container_name: activemq-container
+    ports:
+        - "61616:61616"
+        - "8161:8161"
+    environment:
+      ARTEMIS_USERNAME: admin
+      ARTEMIS_PASSWORD: admin
+      ARTEMIS_MIN_MEMORY: 256M
+      ARTEMIS_MAX_MEMORY: 512M
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
